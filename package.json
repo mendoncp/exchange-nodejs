@@ -1,0 +1,23 @@
+{
+  "name": "distributed-exchange",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start:exchange": "node start-grenache.js",
+    "start:server": "grape --dp 20001 --aph 30001 --bn '127.0.0.1:20001' & grape --dp 20002 --aph 40001 --bn '127.0.0.1:20002'",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "pramod mendonca",
+  "license": "ISC",
+  "dependencies": {
+    "eslint": "^8.49.0",
+    "express": "^4.18.2",
+    "grenache-grape": "^0.9.12",
+    "grenache-nodejs-http": "^0.7.13",
+    "grenache-nodejs-link": "^0.7.13",
+    "uuid": "^9.0.1"
+  }
+}
