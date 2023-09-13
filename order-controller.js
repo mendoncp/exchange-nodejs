@@ -1,10 +1,10 @@
 
-export class OrderController {
+class OrderController {
 
-    orderBook = {
-        buyOrders: {},
-        sellOrders: {},
-        ordersCompleted: {}
+     orderBook = {
+        buy: {},
+        sell: {},
+        ordersCompleted: []
       }
       clientPeer = null
       serverPeer = null

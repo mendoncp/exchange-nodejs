@@ -1,9 +1,11 @@
-const express = require("express");
-const router = express.Router();
-const orderController = require("./order-controller");
+import { Router } from "express";
+import orderController from "./order-controller.js";
 
-router.get('/order/orderBook', function(req, res){
-    const result = orderBook.getOrderBook({ from: orderController.port })
+
+export const router = Router();
+
+ router.get('/order/orderBook', async function(req, res){
+    const result = await orderController.getOrderBook({ from: req.port })
     if (!result.success) throw new AppError("Error getting orders")
     res.status(200).send({ success: true, data: result })
 
@@ -26,6 +28,7 @@ router.get('/order/orderStatus', function(req,res){
         res.send('HELLO WORLD')
     });
 
+    
 
 
 

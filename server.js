@@ -1,7 +1,6 @@
 
-import express, { json } from 'express'
-const orderRoutes = require('./order-routes')
-
+import express, { json } from 'express';
+import { router } from './order-routes.js';
 
 class AppError extends Error { }
 
@@ -17,7 +16,7 @@ app.use((req, res, next) => {
     next();
   });
 
-  app.use("/order", orderRoutes);
+  app.use("/order", router);
 
   app.use("*", (req, res) => {
     res.status(404).send({ success: false, message: "Invalid route" })
